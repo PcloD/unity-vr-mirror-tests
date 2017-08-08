@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// Source: https://forum.unity3d.com/threads/reflection-rendering-wrong-in-openvr-htc-vive.398756/
+
 [ExecuteInEditMode] // Make mirror live-update even when not in play mode
 public class MirrorReflection : MonoBehaviour
 {
@@ -128,7 +130,7 @@ public class MirrorReflection : MonoBehaviour
 
         // find out the reflection plane: position and normal in world space
         Vector3 pos = transform.position;
-        Vector3 normal = -transform.up;
+        Vector3 normal = transform.up;
 
         // Reflect camera around reflection plane
         Vector4 worldSpaceClipPlane = Plane(pos, normal);
